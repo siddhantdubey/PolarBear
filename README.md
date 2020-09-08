@@ -12,13 +12,13 @@ Polar Bear Game for CS404: Game Development
 - Whichever player has more polar bears wins the round and gets the other player's money. 
 - The players can then choose to keep gambling, or stop playing the game.
 
-##Aesthetics
+## Aesthetics
 
 - The players should feel like they're playing together with physical dice.
 - They should feel adrenaline while playing the game and realize that it all luck and no skill. 
 - They should be able to sit back and enjoy the game.
 
-##Dynamics
+## Dynamics
 
 - The game dynamics center around the adrenaline produced by not knowing what happens next.
 - One player will be more inclined to keep playing if they're on a hot streak leading to a build up of momentum.
