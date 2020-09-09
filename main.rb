@@ -26,10 +26,10 @@ This is so that we can get rid of the new line that is taken in when the user gi
 puts ("Welcome to Greenland's Number 1 Casino: Polar Bear Gambling Inc.")
 puts
 puts("What is your name Player 1?")
-player1_name = gets().gsub("\n", '')
+player1_name = gets().chomp
 puts
 puts("What is your name Player 2?")
-player2_name = gets().gsub("\n", '')
+player2_name = gets().chomp
 puts 
 
 game_over = false
@@ -40,11 +40,11 @@ p2money = 0
 while !game_over
     
     puts("How much are you willing to bet players?")
-	p1bet = gets().gsub("\n", '').to_i
+	p1bet = gets().chomp.to_i
 	puts
 	
-	player1 = 0
-    player2 = 0 
+	player1 = 0 #current player1 score 
+    player2 = 0 #current player2 score
 
     def play_turn(player)
         dice = roll_dice(5, 6)
@@ -93,7 +93,7 @@ while !game_over
 	
 	puts
 	puts("Do you wish to continue playing?")
-    answer = gets().gsub("\n", '')
+    answer = gets().chomp
 	
 	if(answer == "yes")
         game_over=false
