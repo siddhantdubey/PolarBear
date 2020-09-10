@@ -1,5 +1,34 @@
 #This is the CS4040 "Flash Game #1" project by Siddhant Dubey, Meseker Worku Kebede, Jack Snyder, and Haziq Valliani
 
+=begin 
+# PolarBear Game
+Polar Bear Game for CS404: Game Development
+
+## Mechanics
+
+- Two players place their bets at the beginning of a round.
+- 5 6-sided Dice are rolled for each player. 
+- If the number on the dice is a 3 or 5 you get points, because there are polar bears around a hole.
+- For a 3 you get 2 points, because there are 2 bears around one hole.
+- For a 5 you get 4 points, because there are 4 bears around one hole.
+- No other roll gives you points.
+- Whichever player has more polar bears wins the round and gets the other player's money. 
+- The players can then choose to keep gambling, or stop playing the game.
+
+## Aesthetics
+
+- The players should feel like they're playing together with physical dice.
+- They should feel adrenaline while playing the game and realize that it all luck and no skill. 
+- They should be able to sit back and enjoy the game.
+
+## Dynamics
+
+- The game dynamics center around the adrenaline produced by not knowing what happens next.
+- One player will be more inclined to keep playing if they're on a hot streak leading to a build up of momentum.
+- The opposite is also true.
+=end
+
+
 def roll_dice(n, size)
     dice = []
     n.times do
@@ -21,11 +50,8 @@ def sum_dice(n, size)
     return sum 
 end  
 
-=begin
-You'll notice that there's a lot of .gsub() in this code.
-This is so that we can get rid of the new line that is taken in when the user gives input to the program.
-=end
 puts ("Welcome to Greenland's Number 1 Casino: Polar Bear Gambling Inc.")
+puts ("You'll be betting on how many polar bears around the ")
 puts
 puts("What is your name Player 1?")
 player1_name = gets().chomp
@@ -94,10 +120,14 @@ while !game_over
 	puts(player2_name + " has " + p2money.to_s + " dollars.") 
 	
 	puts
-	puts("Do you wish to continue playing?")
+	
+ 	puts("-----"*10)
+  	puts("Do you wish to continue playing?(yes/No)")
     answer = gets().chomp
 	
-	if(answer == "yes")
+
+
+	if(answer.downcase == "yes" or answer.downcase == "y")
         game_over=false
     else
         game_over=true
