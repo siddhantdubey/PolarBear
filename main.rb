@@ -1,3 +1,5 @@
+#This is the CS4040 "Flash Game #1" project by Siddhant Dubey, Meseker Worku Kebede, Jack Snyder, and Haziq Valliani
+
 def roll_dice(n, size)
     dice = []
     n.times do
