@@ -94,7 +94,9 @@ while !game_over
 	puts(player2_name + " has " + p2money.to_s + " dollars.") 
 	
 	puts
-	puts("Do you wish to continue playing?")
+	puts("-----"*10)
+	puts("Do you wish to continue playing?(yes/No)")
+
     answer = gets().chomp
 	
 	if(answer == "yes")
