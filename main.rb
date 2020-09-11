@@ -28,7 +28,12 @@ Polar Bear Game for CS404: Game Development
 - The opposite is also true.
 =end
 
+#The roll_die function rolls a single die with size sides and returns the result
+def roll_die(size)
+    return rand(1..size)
+end
 
+#The roll_dice function rolls n dice with size sides each using roll_die and returns a list of the results
 def roll_dice(n, size)
     dice = []
     n.times do
@@ -37,10 +42,7 @@ def roll_dice(n, size)
     return dice
 end
 
-def roll_die(size)
-    return rand(1..size)
-end
-
+#The sum_dice function rolls n dice with size sides each using roll_dice and returns the sum of all of them
 def sum_dice(n, size)
     dice = roll_dice(n, size)
     sum = 0
@@ -50,6 +52,7 @@ def sum_dice(n, size)
     return sum 
 end  
 
+#Introduction with flavor text and player name input
 puts ("Welcome to Greenland's Number 1 Casino: Polar Bear Gambling Inc.")
 puts ("You'll be betting on how many polar bears around the ")
 puts
@@ -66,14 +69,14 @@ p2money = 0
 
 #The following while loop will run until the players don't say yes.
 while !game_over
-    
+    #Both players agree to an amount to bet
     puts("How much are you willing to bet players?")
 	p1bet = gets().chomp.to_i
 	puts
 	
 	player1 = 0 #current player1 score 
     player2 = 0 #current player2 score
-
+    #The play_turn function plays a turn for a player, rolling 5 dice and scores them according to the rules. It returns the points gained in that turn and the dice rolled
     def play_turn(player)
         dice = roll_dice(5, 6)
         dice.each do |die|
@@ -88,7 +91,7 @@ while !game_over
 
     player1, dice1 = play_turn(player1)
     player2, dice2 = play_turn(player2)
-
+        #Both players' dice rolls and points scored are revealed
 	puts(player1_name + " rolled:")
 	print(dice1)
 	puts
@@ -103,7 +106,7 @@ while !game_over
 	puts
 	puts("And had " + player2.to_s + " polar bears")
 	puts 
-
+    #Whichever player scored more points in the round is declared the winner of that round
     if player1 > player2
 		puts (player1_name + " Wins!")
 		puts
